@@ -1,0 +1,1880 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device=width, initial-scale=1">
+<title>Newton's Mechanic</title>
+<style>
+h2 {  
+ font-style: italic;   
+ font-family: "Playfair Display", "Bookman", serif;  
+ color: #255;  
+ letter-spacing:- 0.005em;   
+ word-spacing: 1px;    
+  }  
+  h4 {  
+ font-style: italic;   
+ font-family: "Playfair Display", "Bookman", serif;  
+ color: black;   
+ letter-spacing:- 0.005em;   
+ word-spacing: 1px;  
+ font-size: 1em;  
+ //font-weight: bold;  
+  }  
+ h1 {  
+  position: relative;  
+  padding: 0;  
+  margin: 0;  
+  font-family: "Raleway", sans-serif;  
+  //font-weight: 300;  
+  font-size: 40px;  
+  color: #080808;  
+  -webkit-transition: all 0.4s ease 0s;  
+  -o-transition: all 0.4s ease 0s;  
+  transition: all 0.4s ease 0s;  
+  text-align: center;  
+}  
+.three h1 {  
+  font-size: 28px;  
+  //font-weight: 500;  
+  letter-spacing: 0;  
+  line-height: 1.5em;  
+  padding-bottom: 15px;  
+  position: relative;  
+  text-align: center;  
+}  
+.three h1:before {  
+  content: "";  
+  position: absolute;  
+  left: 10;  
+  bottom: 0;  
+  height: 5px;  
+  width: 550px;  
+  background-color: #111;  
+  text-align: center;  
+}  
+.three h1:after {  
+  content: "";  
+  left: 0;  
+  bottom: 2px;  
+  height: 1px;  
+  width: 85%;  
+  max-width: 255px;  
+  background-color: #333;   
+}  
+p {  
+  position: relative;  
+  padding: 0;  
+  margin: 0;  
+  font-family: "Raleway", sans-serif;  
+  //font-weight: 300;  
+  font-size: 20px;  
+  color: #080808;  
+  -webkit-transition: all 0.4s ease 0s;  
+  -o-transition: all 0.4s ease 0s;  
+  transition: all 0.4s ease 0s;  
+  text-align: center;
+  }
+
+button {  
+  background-color: #af614c;  
+  border: none;  
+  color: white;  
+  padding: 5px 15px; //padding: 15px 32px;  
+  text-align: center;  
+  text-decoration: none;  
+  display: inline-block;  
+  font-size: 16px;  
+  margin: 4px 2px;  
+  cursor: pointer;  
+}
+.mydivG{
+min-height: xxx; 
+}
+
+#mydiv{
+overflow-y:scroll; 
+height:500px; 
+background: linear-gradient(to right, rgba(0,255,4,0), rgba(0,255,0,0.5));
+margin:2px;
+font-weight: bold;
+}
+
+#mydiv1{
+overflow-y:scroll; 
+height:500px; 
+background: linear-gradient(to right, rgba(0,4,255,0), rgba(0,0,255,0.5));
+margin:2px;
+font-weight: bold;
+}
+</style>
+
+<script>
+alert("For didactic purposes, it is clarified: The physics formulas we will use are those of classical mechanics. However, it is important to remember that according to experiments carried out and the General Theory of Relativity, the limit speed in the universe is the speed of light, that is, 299,792,458 m/s.");
+</script>
+</head>
+<body>
+
+<div class="mydivG">
+<div id="mydiv">
+<h2> Kinematics </h2>
+
+<p> Kinematics is the branch of science that studies motion. Thus, scrolling below we can infer the equations of motion, the calculation of the velocity and acceleration of a material point. Therefore, by pasting the corresponding values of the proper magnitude, we get the desired answers. </p>
+
+<h1> Kinematics </h1>
+<h2> Uniform rectilinear motion </h2>
+<script>
+      function algoritmo() {
+        var is = document.getElementById("is").value;
+        var v  = document.getElementById("v").value;
+        var t  = document.getElementById("t").value;
+        var space = (is/1) + (v*t);
+        document.getElementById("FinalSpace").innerHTML = "Final Space: <strong>" + space + "m" + "</strong>";
+      }
+    </script>
+
+    <label for="is">Space in m: </label>
+    <input id="is" type="number"><br>
+    <label for="v">Speed in m/s: </label>
+    <input id="v" type="number"><br>
+    <label for="t">Time in s: </label>
+    <input id="t" type="number"><br>
+    <button onclick="algoritmo()">Calculate</button>
+    <div id="FinalSpace"></div>
+    <br>
+    
+    <h2> Speed </h2>
+<script>
+      function algoritmo1() {
+        var ds99 = document.getElementById("ds99").value;
+        //var v99  = document.getElementById("v99").value;
+        var t199  = document.getElementById("t199").value;
+        var speed99 = ds99/t199;
+        document.getElementById("Speed99").innerHTML = "Avarage Speed: <strong>" + speed99 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <label for="ds99">Space Variation in m: </label>
+    <input id="ds99" type="number"><br>
+    <!--<label for="v99">Speed in m/s: </label>
+    <input id="v99" type="number"><br>-->
+    <label for="t199">Time in s: </label>
+    <input id="t199" type="number"><br>
+    <button onclick="algoritmo1()">Calculate</button>
+    <div id="Speed99"></div>
+    <br>
+ 
+   <h2> Uniformly varied rectilinear motion - Final Space </h2>
+<script>
+      function algoritmo2() {
+        var is198 = document.getElementById("is198").value;
+        var iv98  = document.getElementById("iv98").value;
+        var t298  = document.getElementById("t298").value;
+        var a98  = document.getElementById("a98").value;
+        var space98 = (is198/1)+(iv98*t298)+(Math.pow(t298, 2))*(a98/2);
+        document.getElementById("FinalSpacee98").innerHTML = "Final Space: <strong>" + space98 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="is198">Intial Space m: </label>
+    <input id="is198" type="number"><br>
+    <label for="iv98">Initial Speed in m/s: </label>
+    <input id="iv98" type="number"><br>
+    <label for="t298">Time in s: </label>
+    <input id="t298" type="number"><br>
+    <label for="a98">Acceleration in m/s^2: </label>
+    <input id="a98" type="number"><br>
+    <button onclick="algoritmo2()">Calculate</button>
+    <div id="FinalSpacee98"></div>
+    <br>
+
+<h2> Acceleration </h2>
+<script>
+      function algoritmoa97() {
+        var dv97 = document.getElementById("dv97").value;
+        //var v  = document.getElementById("v").value;
+        var ta97  = document.getElementById("ta97").value;
+        var acceleration97 = dv97/ta97;
+        document.getElementById("Acceleration97").innerHTML = "Acceleration: <strong>" + acceleration97 + "m/s^2" + "</strong>";
+      }
+    </script>
+    
+    <label for="dv97">Speed Variation in m/s: </label>
+    <input id="dv97" type="number"><br>
+    <!--<label for="v">Speed in m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="ta97">Time in s: </label>
+    <input id="ta97" type="number"><br>
+    <button onclick="algoritmoa97()">Calculate</button>
+    <div id="Acceleration97"></div>
+    <br>
+
+<h2> Uniformly varied rectilinear motion (Speed) </h2>
+<script>
+      function algoritmo3() {
+        //var is2 = document.getElementById("is2").value;
+        var iv196  = document.getElementById("iv196").value;
+        var t396  = document.getElementById("t396").value;
+        var a196  = document.getElementById("a196").value;
+        var finalspeed96 = (iv196/1) + (a196*t396);
+        document.getElementById("FinalSpeed96").innerHTML = "Final Speed: <strong>" + finalspeed96 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="is">Intial Space m: </label>
+    <input id="is" type="number"><br>-->
+    <label for="iv196">Initial Speed in m/s: </label>
+    <input id="iv196" type="number"><br>
+    <label for="t396">Time in s: </label>
+    <input id="t396" type="number"><br>
+    <label for="a196">Acceleration in m/s^2: </label>
+    <input id="a196" type="number"><br>
+    <button onclick="algoritmo3()">Calculate</button>
+    <div id="FinalSpeed96"></div>
+    <br>
+
+<h2> Uniformly varied rectilinear motion (Speed without time) </h2>
+<script>
+      function algoritmo4() {
+        //var is2 = document.getElementById("is2").value;
+        var ds195 = document.getElementById("ds195").value;
+        var iv295  = document.getElementById("iv295").value;
+        //var t3  = document.getElementById("t3").value;
+        var a295  = document.getElementById("a295").value;
+        var squarefv95 = Math.pow(iv295,2)+2*a295*ds195;
+        var fv95 = Math.pow(squarefv95, 0.5);
+        document.getElementById("FVelocity95").innerHTML = "Final Speed: <strong>" + fv95 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="is">Intial Space m: </label>
+    <input id="is" type="number"><br>-->
+    <label for="iv295">Initial Speed in m/s: </label>
+    <input id="iv295" type="number"><br>
+    <label for="ds195">Space in m: </label>
+    <input id="ds195" type="number"><br>
+    <label for="a295">Acceleration in m/s^2: </label>
+    <input id="a295" type="number"><br>
+    <button onclick="algoritmo4()">Calculate</button>
+    <div id="FVelocity95"></div>
+    <br>
+
+<h2> Free Fall </h2>
+<h4> Usually, we consider gravity (g) how 9,8 m/s^2 </h4>
+<script>
+      function algoritmo5() {
+        var ih94 = document.getElementById("ih94").value;
+        var iv394  = document.getElementById("iv394").value;
+        var t494  = document.getElementById("t494").value;
+        var g94  = document.getElementById("g94").value;
+        var spaceh94 = (ih94/1)+(iv394*t494)+(Math.pow(t494, 2))*(g94/2);
+        document.getElementById("SpaceH94").innerHTML = "Height: <strong>" + spaceh94 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="ih94">Intial Height m: </label>
+    <input id="ih94" type="number"><br>
+    <label for="iv394">Initial Speed in m/s: </label>
+    <input id="iv394" type="number"><br>
+    <label for="t494">Time in s: </label>
+    <input id="t494" type="number"><br>
+    <label for="g94">Gravity in m/s^2: </label>
+    <input id="g94" type="number"><br>
+    <button onclick="algoritmo5()">Calculate</button>
+    <div id="SpaceH94"></div>
+    <br>
+
+<h2> Free fall (Speed) </h2>
+<h4> Usually, we consider gravity (g) how 9,8 m/s^2 </h4>
+<script>
+      function algoritmoc() {
+        //var is2 = document.getElementById("is2").value;
+        var ivc93  = document.getElementById("ivc93").value;
+        var tc93  = document.getElementById("tc93").value;
+        var gc93  = document.getElementById("gc93").value;
+        var finalspeedc93 = (ivc93/1) + (gc93*tc93);
+        document.getElementById("FinalSpeedc93").innerHTML = "Final Speed: <strong>" + finalspeedc93 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="is">Intial Space m: </label>
+    <input id="is" type="number"><br>-->
+    <label for="ivc93">Initial Speed in m/s: </label>
+    <input id="ivc93" type="number"><br>
+    <label for="tc93">Time in s: </label>
+    <input id="tc93" type="number"><br>
+    <label for="gc93">Acceleration in m/s^2: </label>
+    <input id="gc93" type="number"><br>
+    <button onclick="algoritmoc()">Calculate</button>
+    <div id="FinalSpeedc93"></div>
+    <br>
+
+<h2> Free Fall (Speed without time) </h2>
+<h4> Usually, we consider gravity (g) how 9,8 m/s^2 </h4>
+<script>
+      function algoritmo6() {
+        //var is2 = document.getElementById("is2").value;
+        var dh92 = document.getElementById("dh92").value;
+        var iv492  = document.getElementById("iv492").value;
+        //var t5  = document.getElementById("t5").value;
+        var g192  = document.getElementById("g192").value;
+        var squarefv192 = Math.pow(iv492,2)+2*g192*dh92;
+        var fv192 = Math.pow(squarefv192, 0.5);
+        document.getElementById("FVelocity192").innerHTML = "Final Speed: <strong>" + fv192 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="is">Intial Space m: </label>
+    <input id="is" type="number"><br>-->
+    <label for="iv492">Initial Speed in m/s: </label>
+    <input id="iv492" type="number"><br>
+    <label for="dh92">Height in m: </label>
+    <input id="dh92" type="number"><br>
+    <label for="g192">Gravity in m/s^2: </label>
+    <input id="g192" type="number"><br>
+    <button onclick="algoritmo6()">Calculate</button>
+    <div id="FVelocity192"></div>
+    <br>
+
+<h2> Uniform Circular Motion </h2>
+<script>
+      function algoritmo7() {
+        var iang91 = document.getElementById("iang91").value;
+        var vang91  = document.getElementById("vang91").value;
+        var t591  = document.getElementById("t591").value;
+        var Ang91 = (iang91/1) + (vang91*t591);
+        document.getElementById("FAPosition91").innerHTML = "Final Angular Position: <strong>" + Ang91 + "degree" + "</strong>";
+      }
+    </script>
+
+    <label for="iang91">Initial θ position in degree: </label>
+    <input id="iang91" type="number"><br>
+    <label for="vang91">angular velocity in degree/s: </label>
+    <input id="vang91" type="number"><br>
+    <label for="t591">Time in s: </label>
+    <input id="t591" type="number"><br>
+    <button onclick="algoritmo7()">Calculate</button>
+    <div id="FAPosition91"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Speed </h2>
+<script>
+      function algoritmo8() {
+        var dang90 = document.getElementById("dang90").value;
+        //var v  = document.getElementById("v").value;
+        var t690  = document.getElementById("t690").value;
+        var speed90 = dang90/t690;
+        document.getElementById("ASpeed90").innerHTML = "Avarage Angular Speed: <strong>" + speed90 + "degree/s" + "</strong>";
+      }
+    </script>
+    
+    <label for="dang90">Space Variation in degree: </label>
+    <input id="dang90" type="number"><br>
+    <!--<label for="v">Speed in m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="t690">Time in s: </label>
+    <input id="t690" type="number"><br>
+    <button onclick="algoritmo8()">Calculate</button>
+    <div id="ASpeed90"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Uniformly varied circular motion - Final Angular Position </h2>
+<script>
+      function algoritmo9() {
+        var iang189 = document.getElementById("iang189").value;
+        var ivang89  = document.getElementById("ivang89").value;
+        var t789  = document.getElementById("t789").value;
+        var ag89  = document.getElementById("ag89").value;
+        var ang189 = (iang189/1)+(ivang89*t789)+(Math.pow(t789, 2))*(ag89/2);
+        document.getElementById("FAPosition189").innerHTML = "Final Angular Position: <strong>" + ang189 + "degree" + "</strong>";
+      }
+    </script>
+    
+    <label for="iang189">Initial θ position in degree: </label>
+    <input id="iang189" type="number"><br>
+    <label for="ivang89">Initial Angular Velocity degree/s: </label>
+    <input id="ivang89" type="number"><br>
+    <label for="t789">Time in s: </label>
+    <input id="t789" type="number"><br>
+    <label for="ag89">Acceleration in degree/s^2: </label>
+    <input id="ag89" type="number"><br>
+    <button onclick="algoritmo9()">Calculate</button>
+    <div id="FAPosition189"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Acceleration </h2>
+<script>
+      function algoritmob88() {
+        var dvang88 = document.getElementById("dvang88").value;
+        //var v  = document.getElementById("v").value;
+        var tb88  = document.getElementById("tb88").value;
+        var Aacceleration88 = dvang88/tb88;
+        document.getElementById("AAcceleration88").innerHTML = "Angular acceleration: <strong>" + Aacceleration88 + "degree/s^2" + "</strong>";
+      }
+    </script>
+    
+    <label for="dvang88">Angular speed variation in degree/s: </label>
+    <input id="dvang88" type="number"><br>
+    <!--<label for="v">Speed in m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="tb88">Time in s: </label>
+    <input id="tb88" type="number"><br>
+    <button onclick="algoritmob88()">Calculate</button>
+    <div id="AAcceleration88"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Uniformly varied circular motion (Angular Speed) </h2>
+<script>
+      function algoritmo10() {
+        //var is287 = document.getElementById("is287").value;
+        var ivang187  = document.getElementById("ivang187").value;
+        var t887  = document.getElementById("t887").value;
+        var ag187  = document.getElementById("ag187").value;
+        var vang87 = (ivang187/1) + (ag187*t887);
+        document.getElementById("FAVelocity87").innerHTML = "Final Angular Speed: <strong>" + vang87 + "degree/s" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="is">Intial Space m: </label>
+    <input id="is" type="number"><br>-->
+    <label for="ivang187">Initial Angular Velocity in degree/s: </label>
+    <input id="ivang187" type="number"><br>
+    <label for="t887">Time in s: </label>
+    <input id="t887" type="number"><br>
+    <label for="ag187">Angular acceleration in degree/s^2: </label>
+    <input id="ag187" type="number"><br>
+    <button onclick="algoritmo10()">Calculate</button>
+    <div id="FAVelocity87"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Uniformly varied angular motion (Angular speed without time) </h2>
+<script>
+      function algoritmo11() {
+        //var is2 = document.getElementById("is2").value;
+        var dang186 = document.getElementById("dang186").value;
+        var ivang286  = document.getElementById("ivang286").value;
+        //var t3  = document.getElementById("t3").value;
+        var ag286  = document.getElementById("ag286").value;
+        var squarefvag86 = Math.pow(ivang286,2)+2*ag286*dang186;
+        var fvag86 = Math.pow(squarefvag86, 0.5);
+        document.getElementById("FVAngular86").innerHTML = "Final Angular Velocity: <strong>" + fvag86 + "degree/s" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="is">Intial Space m: </label>
+    <input id="is" type="number"><br>-->
+    <label for="ivang286">Initial Angular Velocity in degree/s: </label>
+    <input id="ivang286" type="number"><br>
+    <label for="dang186">Angular variation in degree: </label>
+    <input id="dang186" type="number"><br>
+    <label for="ag286">Angular acceleration in degree/s^2: </label>
+    <input id="ag286" type="number"><br>
+    <button onclick="algoritmo11()">Calculate</button>
+    <div id="FVAngular86"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath Pulley Frequency A </p>
+<script>
+      function algoritmo12() {
+        var Ra85 = document.getElementById("Ra85").value;
+        var fb85  = document.getElementById("fb85").value;
+        var Rb85  = document.getElementById("Rb85").value;
+        var fa85 = (fb85*Rb85)/Ra85;
+        document.getElementById("FrequenciaA85").innerHTML = "Pulley Frequency A: <strong>" + fa85 + "rpm" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra85">Pulley Radius A in cm: </label>
+    <input id="Ra85" type="number"><br>
+    <label for="Rb85">Pulley Radius B in cm: </label>
+    <input id="Rb85" type="number"><br>
+    <label for="fb85">Pulley Frequency B in rpm: </label>
+    <input id="fb85" type="number"><br>
+    <button onclick="algoritmo12()">Calculate</button>
+    <div id="FrequenciaA85"></div>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath Pulley Frequency B </p>
+<script>
+      function algoritmo13() {
+        var Ra184 = document.getElementById("Ra184").value;
+        var fa184  = document.getElementById("fa184").value;
+        var Rb184  = document.getElementById("Rb184").value;
+        var fb184 = (fa184*Ra184)/Rb184;
+        document.getElementById("FrequenciaB84").innerHTML = "Pulley Frequency B: <strong>" + fb184 + "rpm" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra184">Pulley Radius A in cm: </label>
+    <input id="Ra184" type="number"><br>
+    <label for="Rb184">Pulley Radius B in cm: </label>
+    <input id="Rb184" type="number"><br>
+    <label for="fa184">Pulley Frequency A in rpm: </label>
+    <input id="fa184" type="number"><br>
+    <button onclick="algoritmo13()">Calculate</button>
+    <div id="FrequenciaB84"></div>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath A Radius </p>
+<script>
+      function algoritmo14() {
+        var fa283 = document.getElementById("fa283").value;
+        var fb283  = document.getElementById("fb283").value;
+        var Rb283  = document.getElementById("Rb283").value;
+        var Ra283 = (fb283*Rb283)/fa283;
+        document.getElementById("RA283").innerHTML = "A radius: <strong>" + Ra283 + "cm" + "</strong>";
+      }
+    </script>
+    
+    <label for="Rb283">Pulley Radius B in cm: </label>
+    <input id="Rb283" type="number"><br>
+    <label for="fa283">Pulley Frequency A in rpm: </label>
+    <input id="fa283" type="number"><br>
+    <label for="fb283">Pulley Frequency B in rpm: </label>
+    <input id="fb283" type="number"><br>
+    <button onclick="algoritmo14()">Calculate</button>
+    <div id="RA283"></div>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath B Radius </p>
+<script>
+      function algoritmo15() {
+        var fa382 = document.getElementById("fa382").value;
+        var fb382  = document.getElementById("fb382").value;
+        var Ra382  = document.getElementById("Ra382").value;
+        var Rb382 = (fa382*Ra382)/fb382;
+        document.getElementById("RB382").innerHTML = "B radius: <strong>" + Rb382 + "cm" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra382">Pulley Radius A in cm: </label>
+    <input id="Ra382" type="number"><br>
+    <label for="fa382">Pulley Frequency A in rpm: </label>
+    <input id="fa382" type="number"><br>
+    <label for="fb382">Pulley Frequency B in rpm: </label>
+    <input id="fb382" type="number"><br>
+    <button onclick="algoritmo15()">Calculate</button>
+    <div id="RB382"></div>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath Angular Velocity at Pulley A </p>
+<script>
+      function algoritmo16() {
+        var vangb81 = document.getElementById("vangb81").value;
+        var Rb481  = document.getElementById("Rb481").value;
+        var Ra481  = document.getElementById("Ra481").value;
+        var vanga81 = (vangb81*Rb481)/Ra481;
+        document.getElementById("ωpoliaa81").innerHTML = "Angular Velocity at Pulley A: <strong>" + vanga81 + "degree/m" + "</strong>";
+      }
+    </script>
+    
+    <label for="vangb81">Angular velocity of pulley B in degree/m: </label>
+    <input id="vangb81" type="number"><br>
+    <label for="Rb481">Radius of pulley B in meters: </label>
+    <input id="Rb481" type="number"><br>
+    <label for="Ra481">Radius of pulley A in meters: </label>
+    <input id="Ra481" type="number"><br>
+    <button onclick="algoritmo16()">Calculate</button>
+    <div id="ωpoliaa81"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath Angular Velocity at Pulley B </p>
+<script>
+      function algoritmo17() {
+        var vanga80 = document.getElementById("vanga80").value;
+        var Rb580  = document.getElementById("Rb580").value;
+        var Ra580  = document.getElementById("Ra580").value;
+        var vangb80 = (vanga80*Ra580)/Rb580;
+        document.getElementById("ωpoliab80").innerHTML = "Angular Velocity at Pulley B: <strong>" + vangb80 + "degree/m" + "</strong>";
+      }
+    </script>
+    
+    <label for="vanga80">Angular velocity of pulley A in degree/m: </label>
+    <input id="vanga80" type="number"><br>
+    <label for="Rb580">Radius of pulley B in meters: </label>
+    <input id="Rb580" type="number"><br>
+    <label for="Ra580">Radius of pulley A in meters: </label>
+    <input id="Ra580" type="number"><br>
+    <button onclick="algoritmo17()">Calculate</button>
+    <div id="ωpoliab80"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+    <h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath A Radius </p>
+<script>
+      function algoritmo18() {
+        var vanga179 = document.getElementById("vanga179").value;
+        var vangb179  = document.getElementById("vangb179").value;
+        var Rb679  = document.getElementById("Rb679").value;
+        var Ra679 = (Rb679*vangb179)/vanga179;
+        document.getElementById("RA679").innerHTML = "A radius: <strong>" + Ra679 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="Rb679">Pulley Radius B in meters: </label>
+    <input id="Rb679" type="number"><br>
+    <label for="vanga179">Angular velocity of pulley A in degree/s: </label>
+    <input id="vanga179" type="number"><br>
+    <label for="vangb179">Angular velocity of pulley B in degree/s: </label>
+    <input id="vangb179" type="number"><br>
+    <button onclick="algoritmo18()">Calculate</button>
+    <div id="RA679"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By belt </h2>
+<h4> va=vb </h4>
+<p> Aftermath B Radius </p>
+<script>
+      function algoritmo19() {
+        var vanga278 = document.getElementById("vanga278").value;
+        var vangb278  = document.getElementById("vangb278").value;
+        var Ra778  = document.getElementById("Ra778").value;
+        var Rb778 = (Ra778*vanga278)/vangb278;
+        document.getElementById("RB678").innerHTML = "B radius: <strong>" + Rb778 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra778">Pulley Radius A in meters: </label>
+    <input id="Ra778" type="number"><br>
+    <label for="vanga278">Angular velocity of pulley A in degree/s: </label>
+    <input id="vanga278" type="number"><br>
+    <label for="vangb278">Angular velocity of pulley B in degree/s: </label>
+    <input id="vangb278" type="number"><br>
+    <button onclick="algoritmo19()">Calculate</button>
+    <div id="RB678"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By axis </h2>
+<h4> Angular Acceleration in a=Angular Acceleration in b </h4>
+<p> Aftermath speed A </p>
+<script>
+      function algoritmo20() {
+        var Ra877  = document.getElementById("Ra877").value;
+        var Rb877  = document.getElementById("Rb877").value;
+        var vb77  = document.getElementById("vb77").value;
+        var va77 = (vb77*Ra877)/Rb877;
+        document.getElementById("VE77").innerHTML = "Axis speed A: <strong>" + va77 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra877">Pulley Radius A in meters: </label>
+    <input id="Ra877" type="number"><br>
+    <label for="Rb877">Pulley Radius B in meters: </label>
+    <input id="Rb877" type="number"><br>
+    <label for="vb77">Scalar velocity axis B in m/s: </label>
+    <input id="vb77" type="number"><br>
+    <button onclick="algoritmo20()">Calculate</button>
+    <div id="VE77"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By axis </h2>
+<h4> Angular Acceleration in a=Angular Acceleration in b </h4>
+<p> Aftermath speed B </p>
+<script>
+      function algoritmo21() {
+        var Ra976  = document.getElementById("Ra976").value;
+        var Rb976  = document.getElementById("Rb976").value;
+        var va76  = document.getElementById("va76").value;
+        var vb76 = (va76*Rb976)/Ra976;
+        document.getElementById("VEB76").innerHTML = "Axis speed B: <strong>" + vb76 + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra976">Pulley Radius A in meters: </label>
+    <input id="Ra976" type="number"><br>
+    <label for="Rb976">Pulley Radius B in meters: </label>
+    <input id="Rb976" type="number"><br>
+    <label for="va76">Scalar velocity axis A in m/s: </label>
+    <input id="va76" type="number"><br>
+    <button onclick="algoritmo21()">Calculate</button>
+    <div id="VEB76"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By axis </h2>
+<h4> Angular Acceleration in a=Angular Acceleration in b </h4>
+<p> Aftermath A radius </p>
+<script>
+      function algoritmo22() {
+        var Rb1075  = document.getElementById("Rb1075").value;
+        var va175  = document.getElementById("va175").value;
+        var vb175  = document.getElementById("vb175").value;
+        var Ra1075 = (va175*Rb1075)/vb175;
+        document.getElementById("RA1075").innerHTML = "A radius: <strong>" + Ra1075 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="Rb1075">Pulley Radius B in meters: </label>
+    <input id="Rb1075" type="number"><br>
+    <label for="va175">Scalar velocity axis A in m/s: </label>
+    <input id="va175" type="number"><br>
+    <label for="vb175">Scalar velocity axis B in m/s: </label>
+    <input id="vb175" type="number"><br>
+    <button onclick="algoritmo22()">Calculate</button>
+    <div id="RA1075"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+
+<h2> Pulley Coupling - By axis </h2>
+<h4> Angular Acceleration in a=Angular Acceleration in b </h4>
+<p> Aftermath B radius </p>
+<script>
+      function algoritmo23() {
+        var Ra1174  = document.getElementById("Ra1174").value;
+        var va274  = document.getElementById("va274").value;
+        var vb274  = document.getElementById("vb274").value;
+        var Rb1174 = (vb274*Ra1174)/va274;
+        document.getElementById("RB1174").innerHTML = "B radius: <strong>" + Rb1174 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ra1174">Pulley Radius A in meters: </label>
+    <input id="Ra1174" type="number"><br>
+    <label for="va274">Scalar velocity axis A in m/s: </label>
+    <input id="va274" type="number"><br>
+    <label for="vb274">Scalar velocity axis B in m/s: </label>
+    <input id="vb274" type="number"><br>
+    <button onclick="algoritmo23()">Calculate</button>
+    <div id="RB1174"></div>
+    <br>
+    <p>3, 14 rad = 180degree => PIrad = 180degree</p>
+    <br>
+</div>
+</div>
+
+<hr>
+
+<div class="mydivG">
+<div id="mydiv1">
+<h2> Dynamics </h2>
+
+<p> Dynamics is the branch of science that studies the causes of movement, the way it occurs, how it develops or remains at rest. Therefore, you can infer the equations Force, Momentum, Work, Power, Energy, Amount of motion, Center of mass, as well as fundamental equations of fluids. Therefore, by pasting the corresponding values of the proper magnitude, we get the desired answers. </p>
+
+<h1> Dynamics </h1>      
+<h2> Force </h2>
+<h4> Newton's Second Law </h4>
+<script>
+      function algoritmo50() {
+        var m = document.getElementById("m").value;
+        //var v  = document.getElementById("v").value;
+        var a  = document.getElementById("a").value;
+        var Force = m*a;
+        document.getElementById("FORCE").innerHTML = "Resultant force: <strong>" + Force + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="m">Mass in Kg: </label>
+    <input id="m" type="number"><br>
+    <!--<label for="v">Speed at the m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="a">Acceleration in m/s^2: </label>
+    <input id="a" type="number"><br>
+    <button onclick="algoritmo50()">Calculate</button>
+    <div id="FORCE"></div>
+    <br>
+
+<h2> Tensile strength </h2>
+<h4> Hooke's Law </h4>
+<script>
+      function algoritmo51() {
+        var k = document.getElementById("k").value;
+        //var v  = document.getElementById("v").value;
+        var x  = document.getElementById("x").value;
+        var Fel = -(k*x);
+        document.getElementById("FEL").innerHTML = "Resultant force: <strong>" + Fel + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="k">Elastic constant in N/m: </label>
+    <input id="k" type="number"><br>
+    <!--<label for="v">Speed at the m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="x">Spring deformation in m: </label>
+    <input id="x" type="number"><br>
+    <button onclick="algoritmo51()">Calculate</button>
+    <div id="FEL"></div>
+    <br>
+
+<h2> Frictional force </h2>
+<h4> Static friction force </h4>
+<script>
+      function algoritmo52() {
+        var cae = document.getElementById("cae").value;
+        //var v  = document.getElementById("v").value;
+        var fn  = document.getElementById("fn").value;
+        var Fae = (cae*fn);
+        document.getElementById("FAE").innerHTML = "Static friction force is less equal: <strong>" + Fae + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="cae">Static Coefficient of Friction has no dimension - Has no unit: </label>
+    <input id="cae" type="number"><br>
+    <!--<label for="v">Speed at the m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="fn">Normal force in N: </label>
+    <input id="fn" type="number"><br>
+    <button onclick="algoritmo52()">Calculate</button>
+    <div id="FAE"></div>
+    <br>
+
+<h2> Frictional force </h2>
+<h4> Kinetic frictional force </h4>
+<script>
+      function algoritmo53() {
+        var cac = document.getElementById("cac").value;
+        //var v  = document.getElementById("v").value;
+        var fn1  = document.getElementById("fn1").value;
+        var Fac = (cac*fn1);
+        document.getElementById("FAC").innerHTML = "Kinetic frictional force: <strong>" + Fac + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="cac">Coefficient of kinetic friction has no dimension - Has no unit: </label>
+    <input id="cac" type="number"><br>
+    <!--<label for="v">Speed at the m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="fn1">Normal force in N: </label>
+    <input id="fn1" type="number"><br>
+    <button onclick="algoritmo53()">Calculate</button>
+    <div id="FAC"></div>
+    <br>
+
+<h2> Moment of a Force - Torque </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo54() {
+        var d = document.getElementById("d").value;
+        //var v  = document.getElementById("v").value;
+        var Force1  = document.getElementById("Force1").value;
+        var MomentF = (Force1*d);
+        document.getElementById("MOMENTF").innerHTML = "Moment of force: <strong>" + MomentF + "N.m" + "</strong>";
+      }
+    </script>
+    
+    <label for="d">distance in m: </label>
+    <input id="d" type="number"><br>
+    <!--<label for="v">Speed at the m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="Force1">Force in N: </label>
+    <input id="Force1" type="number"><br>
+    <button onclick="algoritmo54()">Calculate</button>
+    <div id="MOMENTF"></div>
+    <br>
+    <p>Resultant Moment = MF1+ MF2+...+ MFN</p>
+    <br>
+
+<h2> Centripetal resultant - Force </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo55() {
+        var m1 = document.getElementById("m1").value;
+        //var v  = document.getElementById("v").value;
+        var acp  = document.getElementById("acp").value;
+        var Fcp = (m1*acp);
+        document.getElementById("FCP").innerHTML = "Centripetal resultant: <strong>" + Fcp + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="m1">Mass in kg: </label>
+    <input id="m1" type="number"><br>
+    <!--<label for="v">Speed at the m/s: </label>
+    <input id="v" type="number"><br>-->
+    <label for="acp">Centripetal acceleration in m/s^2: </label>
+    <input id="acp" type="number"><br>
+    <button onclick="algoritmo55()">Calculate</button>
+    <div id="FCP"></div>
+    <br>
+
+<h2> Centripetal acceleration </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo56() {
+        //var m1 = document.getElementById("m1").value;
+        var vx  = document.getElementById("vx").value;
+        var R  = document.getElementById("R").value;
+        var acp1 = (Math.pow(vx, 2))/R;
+        document.getElementById("ACP1").innerHTML = "Centripetal acceleration: <strong>" + acp1 + "m/s^2" + "</strong>";
+      }
+    </script>
+    
+    <!--<label for="m1">Mass in kg: </label>
+    <input id="m1" type="number"><br>-->
+    <label for="vx">Speed at the m/s: </label>
+    <input id="vx" type="number"><br>
+    <label for="R">Trajectory radius in m: </label>
+    <input id="R" type="number"><br>
+    <button onclick="algoritmo56()">Calculate</button>
+    <div id="ACP1"></div>
+    <br>
+
+<h2> Centripetal force - with speed </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo57() {
+        var m2 = document.getElementById("m2").value;
+        var v1  = document.getElementById("v1").value;
+        var R1  = document.getElementById("R1").value;
+        var Fcp1 = (m2*(Math.pow(v1,2)))/R1;
+        document.getElementById("FCP1").innerHTML = "Centripetal resultant: <strong>" + Fcp1 + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="m2">Mass in kg: </label>
+    <input id="m2" type="number"><br>
+    <label for="v1">Speed in m/s: </label>
+    <input id="v1" type="number"><br>
+    <label for="R1">Trajectory radius in m: </label>
+    <input id="R1" type="number"><br>
+    <button onclick="algoritmo57()">Calculate</button>
+    <div id="FCP1"></div>
+    <br>
+
+<h2> Strength work </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo58() {
+        var fr = document.getElementById("fr").value;
+        var dx  = document.getElementById("dx").value;
+        var cosang  = document.getElementById("cosang").value;
+        var W = (fr*dx)*Math.cos(cosang);
+        document.getElementById("WF").innerHTML = "Strength work: <strong>" + W + "J" + "</strong>";
+      }
+    </script>
+    
+    <label for="fr">Resultant force in N: </label>
+    <input id="fr" type="number"><br>
+    <label for="dx">Detachment in m: </label>
+    <input id="dx" type="number"><br>
+    <label for="cosang">Angle (cosθ)  between Force and detachment in radians.: </label>
+    <input id="cosang" type="number"><br>
+    <button onclick="algoritmo58()">Calculate</button>
+    <div id="WF"></div>
+    <br>
+    <p> W =(variation)E </p>
+    </br>
+
+<h2> Average Power </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo59() {
+        var W1 = document.getElementById("W1").value;
+        var dt  = document.getElementById("dt").value;
+        //var cosθ  = document.getElementById("cosθ").value;
+        var Pm = (W1/dt);
+        document.getElementById("PM").innerHTML = "Average Power: <strong>" + Pm + "W (watt)" + "</strong>";
+      }
+    </script>
+    
+    <label for="W1">Work in Joules: </label>
+    <input id="W1" type="number"><br>
+    <label for="dt">End time subtracted start time in s: </label>
+    <input id="dt" type="number"><br>
+    <!--<label for="cosθ">Angle (cosθ)  between Force and detachment in degrees.: </label>
+    <input id="cosθ" type="number"><br>-->
+    <button onclick="algoritmo59()">Calculate</button>
+    <div id="PM"></div>
+    <br>
+    <p> W =(variation)E </p>
+    </br>
+
+<h2> Power of a force as a function of average velocity </h2>
+<!--<h4> Kinetic frictional force </h4>-->
+<script>
+      function algoritmo510() {
+        var f = document.getElementById("f").value;
+        var vm  = document.getElementById("vm").value;
+        var cosang1  = document.getElementById("cosang1").value;
+        var Pt = (f*vm)*Math.cos(cosang1);
+        document.getElementById("PT").innerHTML = "Force Power: <strong>" + Pt + "W (watt)" + "</strong>";
+      }
+    </script>
+    
+    <label for="f">Force in N: </label>
+    <input id="f" type="number"><br>
+    <label for="vm">Average speed in m/s: </label>
+    <input id="vm" type="number"><br>
+    <label for="cosang1">(cosθ) - angle formed between the directions of force and motion, in radians.: </label>
+    <input id="cosang1" type="number"><br>
+    <button onclick="algoritmo510()">Calculate</button>
+    <div id="PT"></div>
+    <br>
+
+<h2> Machine Throughput - Engine performance </h2>
+<script>
+      function algoritmo511() {
+        var Potr = document.getElementById("Potr").value;
+        var Potd  = document.getElementById("Potd").value;
+        //var cosθ1  = document.getElementById("cosθ1").value;
+        var Rendimento = (Potr-Potd)/Potr;
+        document.getElementById("RENDIMENTO").innerHTML = "Engine performance: <strong>" + Rendimento + " It Has No Unity - Dimensionless Quantity" + "</strong>";
+      }
+    </script>
+    
+    <label for="Potr">Received power: </label>
+    <input id="Potr" type="number"><br>
+    <label for="Potd">Power Dissipated: </label>
+    <input id="Potd" type="number"><br>
+    <!--<label for="cosθ1">(cosθ) - angle formed between the directions of force and motion, in degrees.: </label>
+    <input id="cosθ1" type="number"><br>-->
+    <button onclick="algoritmo511()">Calculate</button>
+    <div id="RENDIMENTO"></div>
+    <br>
+    <h4> Usable power = Received power - Power Dissipated </h4>
+    <br>
+
+<h2> Kinetic energy </h2>
+<script>
+      function algoritmo512() {
+        var m3 = document.getElementById("m3").value;
+        var v2  = document.getElementById("v2").value;
+        //var cosθ1  = document.getElementById("cosθ1").value;
+        var Ec = ((m3/2)*(Math.pow(v2,2)));
+        document.getElementById("EC").innerHTML = "Kinetic energy: <strong>" + Ec + "J" + "</strong>";
+      }
+    </script>
+    
+    <label for="m3">Mass in Kg: </label>
+    <input id="m3" type="number"><br>
+    <label for="v2">Speed in m/s: </label>
+    <input id="v2" type="number"><br>
+    <!--<label for="cosθ1">(cosθ) - angle formed between the directions of force and motion, in degrees.: </label>
+    <input id="cosθ1" type="number"><br>-->
+    <button onclick="algoritmo512()">Calculate</button>
+    <div id="EC"></div>
+    <br>
+    <p> W =(variation)E </p>
+    </br>
+   
+<h2> Gravitational potential energy </h2>
+<h4> We usually use g as 9.8m/s^2 </h4>
+<script>
+      function algoritmo513() {
+        var m4 = document.getElementById("m4").value;
+        var g  = document.getElementById("g").value;
+        var h  = document.getElementById("h").value;
+        var Epg = (m4*g*h);
+        document.getElementById("EPG").innerHTML = "Potential energy: <strong>" + Epg + "J" + "</strong>";
+      }
+    </script>
+    
+    <label for="m4">Mass in Kg: </label>
+    <input id="m4" type="number"><br>
+    <label for="g">Acceleration of gravity in  m/s^2: </label>
+    <input id="g" type="number"><br>
+    <label for="h">Height in m: </label>
+    <input id="h" type="number"><br>
+    <button onclick="algoritmo513()">Calculate</button>
+    <div id="EPG"></div>
+    <br>
+    <p> W =(variation)E </p>
+    </br>
+
+<h2> Elastic potential energy </h2>
+<!--<h4> We usually use g as 9.8m/s^2 </h4>-->
+<script>
+      function algoritmo514() {
+        var k1 = document.getElementById("k1").value;
+        var x1  = document.getElementById("x1").value;
+        //var h  = document.getElementById("h").value;
+        var Epe = ((k1/2)*(Math.pow(x1,2)));
+        document.getElementById("EPE").innerHTML = "Elastic potential energy: <strong>" + Epe + "J" + "</strong>";
+      }
+    </script>
+    
+    <label for="k1">Spring elastic constant in N/m: </label>
+    <input id="k1" type="number"><br>
+    <label for="x1">Spring deformation in m: </label>
+    <input id="x1" type="number"><br>
+    <!--<label for="h">Height in m: </label>
+    <input id="h" type="number"><br>-->
+    <button onclick="algoritmo514()">Calculate</button>
+    <div id="EPE"></div>
+    <br>
+    <p> W =(variation)E </p>
+    </br>
+
+<h2> Mechanical energy </h2>
+<!--<h4> We usually use g as 9.8m/s^2 </h4>-->
+<script>
+      function algoritmo515() {
+        var Ec1 = document.getElementById("Ec1").value;
+        var Ep  = document.getElementById("Ep").value;
+        //var h  = document.getElementById("h").value;
+        var Em = (Ec1/1)+(Ep/1);
+        document.getElementById("EM").innerHTML = "Mechanical energy: <strong>" + Em + "J" + "</strong>";
+      }
+    </script>
+    
+    <label for="Ec1">Kinetic energy in J: </label>
+    <input id="Ec1" type="number"><br>
+    <label for="Ep">Potential energy in J: </label>
+    <input id="Ep" type="number"><br>
+    <!--<label for="h">Height in m: </label>
+    <input id="h" type="number"><br>-->
+    <button onclick="algoritmo515()">Calculate</button>
+    <div id="EM"></div>
+    <br>
+    <p> W =(variation)E </p>
+    </br>
+
+<h2> Amount of movement </h2>
+<script>
+      function algoritmo516() {
+        var m5 = document.getElementById("m5").value;
+        var v3  = document.getElementById("v3").value;
+        //var h  = document.getElementById("h").value;
+        var qm = (m5*v3);
+        document.getElementById("QM").innerHTML = "Amount of movement: <strong>" + qm + "Kg.m/s" + "</strong>";
+      }
+    </script>
+    
+    <label for="m5">Mass in Kg: </label>
+    <input id="m5" type="number"><br>
+    <label for="v3">Speed in m/s: </label>
+    <input id="v3" type="number"><br>
+    <!--<label for="h">Height in m: </label>
+    <input id="h" type="number"><br>-->
+    <button onclick="algoritmo516()">Calculate</button>
+    <div id="QM"></div>
+    <br>
+   
+<h2> Impulse of a force </h2>
+<script>
+      function algoritmo517() {
+        var f1 = document.getElementById("f1").value;
+        var dt1  = document.getElementById("dt1").value;
+        //var h  = document.getElementById("h").value;
+        var i = (f1*dt1);
+        document.getElementById("IF").innerHTML = "Impulse: <strong>" + i + "N.s" + "</strong>";
+      }
+    </script>
+    
+    <label for="f1">Force in N: </label>
+    <input id="f1" type="number"><br>
+    <label for="dt1">Time interval in s: </label>
+    <input id="dt1" type="number"><br>
+    <!--<label for="h">Height in m: </label>
+    <input id="h" type="number"><br>-->
+    <button onclick="algoritmo517()">Calculate</button>
+    <div id="IF"></div>
+    <br>
+
+<h2> Coefficient of restitution </h2>
+<script>
+      function algoritmo518() {
+        var vrap = document.getElementById("vrap").value;
+        var vraf  = document.getElementById("vraf").value;
+        //var h  = document.getElementById("h").value;
+        var e = (vraf/vrap);
+        document.getElementById("CR").innerHTML = "Coefficient of restitution: <strong>" + e + " It Has No Unity - Dimensionless Quantity" + "</strong>";
+      }
+    </script>
+    
+    <label for="vrap">Relative approach velocity: </label>
+    <input id="vrap" type="number"><br>
+    <label for="vraf">Relative clearance speed: </label>
+    <input id="vraf" type="number"><br>
+    <!--<label for="h">Height in m: </label>
+    <input id="h" type="number"><br>-->
+    <button onclick="algoritmo518()">Calculate</button>
+    <div id="CR"></div>
+    <br>
+    <h4> Perfectly elastic collision -> Coefficient of restitution = 1 </h4>
+    <h4> Partially elastic collision -> 0  <  Coefficient of restitution <  1  </h4>
+   <h4> Inelastic collision -> Coefficient of restitution = 0 </h4>
+    <br>
+
+<h2>  Center of mass </h2>
+<script>
+      function algoritmo519() {
+        var ma  = document.getElementById("ma").value;
+        var mb  = document.getElementById("mb").value;
+        var mc  = document.getElementById("mc").value;
+        var md  = document.getElementById("md").value;
+        var me  = document.getElementById("me").value;
+        var mf  = document.getElementById("mf").value;
+        var mg  = document.getElementById("mg").value;
+        var mh  = document.getElementById("mh").value;
+        var mi  = document.getElementById("mi").value;
+        var mj  = document.getElementById("mj").value;
+        var xa  = document.getElementById("xa").value;
+        var xb  = document.getElementById("xb").value;
+        var xc  = document.getElementById("xc").value;
+        var xd  = document.getElementById("xd").value;
+        var xe  = document.getElementById("xe").value;
+        var xf  = document.getElementById("xf").value;
+        var xg  = document.getElementById("xg").value;
+        var xh  = document.getElementById("xh").value;
+        var xi  = document.getElementById("xi").value;
+        var xj  = document.getElementById("xj").value;
+        var sum = (ma*1+mb*1+mc*1+md*1+me*1+mf*1+mg*1+mh*1+mi*1+mj*1);
+        var xcm = ((ma*xa)/sum + (mb*xb)/sum/1 + (mc*xc)/sum + (md*xd)/sum/1 + (me*xe)/sum + (mf*xf)/sum/1 + (mg*xg)/sum + (mh*xh)/sum + (mi*xi)/sum + (mj*xj)/sum);
+        document.getElementById("XCM").innerHTML = "Center of mass: <strong>" + xcm + "X axis" + "</strong>";
+      }
+    </script>
+    
+    <label for="ma">m1: </label>
+    <input id="ma" type="number"><br>
+    <label for="xa">x1: </label>
+    <input id="xa" type="number"><br>
+    <label for="mb">m2: </label>
+    <input id="mb" type="number"><br>
+    <label for="xb">x2: </label>
+    <input id="xb" type="number"><br>
+    <label for="mc">m3: </label>
+    <input id="mc" type="number"><br>
+    <label for="xc">x3: </label>
+    <input id="xc" type="number"><br>
+    <label for="md">m4: </label>
+    <input id="md" type="number"><br>
+    <label for="xd">x4: </label>
+    <input id="xd" type="number"><br>
+    <label for="me">m5: </label>
+    <input id="me" type="number"><br>
+    <label for="xe">x5: </label>
+    <input id="xe" type="number"><br>
+    <label for="mf">m6: </label>
+    <input id="mf" type="number"><br>
+    <label for="xf">x6: </label>
+    <input id="xf" type="number"><br>
+    <label for="mg">m7: </label>
+    <input id="mg" type="number"><br>
+    <label for="xg">x7: </label>
+    <input id="xg" type="number"><br>
+    <label for="mh">m8: </label>
+    <input id="mh" type="number"><br>
+    <label for="xh">x8: </label>
+    <input id="xh" type="number"><br>
+    <label for="mi">m9: </label>
+    <input id="mi" type="number"><br>
+    <label for="xi">x9: </label>
+    <input id="xi" type="number"><br>
+    <label for="mj">m10: </label>
+    <input id="mj" type="number"><br>
+    <label for="xj">x10: </label>
+    <input id="xj" type="number"><br>
+    
+    <button onclick="algoritmo519()">Calculate</button>
+    <div id="XCM"></div>
+    <br>
+    <h4> yCM = (m1y1 + m2y2 + mNyN)/(m1 + m2 + mN) </h4>
+    <h4> zCM = (m1z1 + m2z2 + mNzN)/(m1 + m2 + mN) </h4>
+    <br>
+
+<h2> Gravitation </h2>
+<h4> Gravitational force </h4>
+<h4> The universal gravitation constant is:  6,67 x 10^-11 newtons metro^2/quilograma^2 </h4>
+<script>
+      function algoritmo520() {
+        var G = document.getElementById("G").value;
+        var M  = document.getElementById("M").value;
+        var m6  = document.getElementById("m6").value;
+        var d1  = document.getElementById("d1").value;
+        var squared1  = Math.pow(d1,2);
+        var Fg = ((G*M*m6)/squared1);
+        document.getElementById("FG").innerHTML = "Gravitational force: <strong>" + Fg + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="G">Universal gravitation constant in N.m^2/Kg^3: </label>
+    <input id="G" type="number"><br>
+    <label for="M">Body Mass 1 in Kg: </label>
+    <input id="M" type="number"><br>
+    <label for="m6">Body Mass 2 in Kg: </label>
+    <input id="m6" type="number"><br>
+    <label for="d1">distance between the centers of the bodies in m: </label>
+    <input id="d1" type="number"><br>
+    <button onclick="algoritmo520()">Calculate</button>
+    <div id="FG"></div>
+    <br>
+
+<h2> Kepler's 3rd Law </h2>
+
+<script>
+      function algoritmo521() {
+        var T = document.getElementById("T").value;
+        var R2 = document.getElementById("R2").value;
+        var SquareT = Math.pow(T,2);
+        var CubeR2 = Math.pow(R2,3);
+        var K = (SquareT/CubeR2);
+        document.getElementById("CK").innerHTML = "Kepler's constant: <strong>" + K + "</strong>";
+      }
+    </script>
+    
+    <label for="T">Period of revolution of the planet, measured in years: </label>
+    <input id="T" type="number"><br>
+    <label for="R2">Average radius of the planet's orbit, measured in AU: </label>
+    <input id="R2" type="number"><br>
+    <button onclick="algoritmo521()">Calculate</button>
+    <div id="CK"></div>
+    <br>
+    <h4> AU is the astronomical unit. It is equivalent to the distance from the Earth to the Sun (1.48 x 10^8 km) </h4>
+    <p> T1^2/R1^3 = T2^2/R2^3 </p><br>
+    <h4>T1 and T2 are the periods of revolution of two planets.
+    <br>
+    R1 and R2 are the mean radii of the orbits of these two planets.</h4>
+    <br>
+
+<h2> Kepler's Law </h2>
+<h4> Period of Revolution Planet 1 </h4>
+
+<script>
+      function algoritmo522() {
+        var Tb = document.getElementById("Tb").value;
+        var Ra = document.getElementById("Ra").value;
+        var Rb = document.getElementById("Rb").value;
+        var SquareTb = Math.pow(Tb,2);
+        var CubeRa = Math.pow(Ra,3);
+        var CubeRb = Math.pow(Rb,3);
+        var SquareTa = (SquareTb*CubeRa/CubeRb);
+        var Ta = Math.pow(SquareTa,0.5);
+        document.getElementById("TA").innerHTML = "Period of Revolution Planet 1: <strong>" + Ta + "</strong>";
+      }
+    </script>
+    
+    <label for="Tb">Period of Revolution Planet 2: </label>
+    <input id="Tb" type="number"><br>
+    <label for="Ra">Mean radius of planet 1's orbit: </label>
+    <input id="Ra" type="number"><br>
+    <label for="Rb">Mean radius of planet 2's orbit: </label>
+    <input id="Rb" type="number"><br>
+    <button onclick="algoritmo522()">Calculate</button>
+    <div id="TA"></div>
+    <br>
+
+<h2> Kepler's Law </h2>
+<h4> Period of Revolution Planet 2 </h4>
+
+<script>
+      function algoritmo523() {
+        var Ta1 = document.getElementById("Ta1").value;
+        var Ra1 = document.getElementById("Ra1").value;
+        var Rb1 = document.getElementById("Rb1").value;
+        var SquareTa1 = Math.pow(Ta1,2);
+        var CubeRa1 = Math.pow(Ra1,3);
+        var CubeRb1 = Math.pow(Rb1,3);
+        var SquareTb1 = (SquareTa1*CubeRb1/CubeRa1);
+        var Tb1 = Math.pow(SquareTb1,0.5);
+        document.getElementById("TB").innerHTML = "Period of Revolution Planet 2: <strong>" + Tb1 + "</strong>";
+      }
+    </script>
+    
+    <label for="Ta1">Period of Revolution Planet 1: </label>
+    <input id="Ta1" type="number"><br>
+    <label for="Rb1">Mean radius of planet 2's orbit: </label>
+    <input id="Rb1" type="number"><br>
+    <label for="Ra1">Mean radius of planet 1's orbit: </label>
+    <input id="Ra1" type="number"><br>
+    <button onclick="algoritmo523()">Calculate</button>
+    <div id="TB"></div>
+    <br>
+
+<h2> Kepler's Law </h2>
+<h4> Mean radius of planet 1's orbit </h4>
+
+<script>
+      function algoritmo524() {
+        var Ta2 = document.getElementById("Ta2").value;
+        var Rb2 = document.getElementById("Rb2").value;
+        var Tb2 = document.getElementById("Tb2").value;
+        var SquareTa2 = Math.pow(Ta2,2);
+        var CubeRb2 = Math.pow(Rb2,3);
+        var SquareTb2 = Math.pow(Tb2,2);
+        var CubeRa2 = (SquareTa2*CubeRb2/SquareTb2);
+        var Ra2 = Math.pow(CubeRa2,1/3);
+        document.getElementById("RA").innerHTML = "Mean radius of planet 1's orbit: <strong>" + Ra2 + "</strong>";
+      }
+    </script>
+    
+    <label for="Ta2">Period of Revolution Planet 1: </label>
+    <input id="Ta2" type="number"><br>
+    <label for="Rb2">Mean radius of planet 2's orbit: </label>
+    <input id="Rb2" type="number"><br>
+    <label for="Tb2">Period of Revolution Planet 2: </label>
+    <input id="Tb2" type="number"><br>
+    <button onclick="algoritmo524()">Calculate</button>
+    <div id="RA"></div>
+    <br>
+
+<h2> Kepler's Law </h2>
+<h4> Mean radius of planet 2's orbit </h4>
+
+<script>
+      function algoritmo525() {
+        var Tb3 = document.getElementById("Tb3").value;
+        var Ra3 = document.getElementById("Ra3").value;
+        var Ta3 = document.getElementById("Ta3").value;
+        var SquareTb3 = Math.pow(Tb3,2);
+        var CubeRa3 = Math.pow(Ra3,3);
+        var SquareTa3 = Math.pow(Ta3,2);
+        var CubeRb3 = (SquareTb3*CubeRa3/SquareTa3);
+        var Rb3 = Math.pow(CubeRb3,1/3);
+        document.getElementById("RB").innerHTML = "Mean radius of planet 2's orbit: <strong>" + Rb3 + "</strong>";
+      }
+    </script>
+    
+    <label for="Tb3">Period of Revolution Planet 2: </label>
+    <input id="Tb3" type="number"><br>
+    <label for="Ra3">Mean radius of planet 1's orbit: </label>
+    <input id="Ra3" type="number"><br>
+    <label for="Ta3">Period of Revolution Planet 1: </label>
+    <input id="Ta3" type="number"><br>
+    <button onclick="algoritmo525()">Calculate</button>
+    <div id="RB"></div>
+    <br>
+
+<h2> Speed of a satellite </h2>
+
+<script>
+      function algoritmo526() {
+        var G1 = document.getElementById("G1").value;
+        var M7 = document.getElementById("M7").value;
+        var r3 = document.getElementById("r3").value;
+        var Squarevs = (G1*M7)/r3;
+        var vs = Math.pow(Squarevs,0.5);
+        document.getElementById("VS").innerHTML = "Satellite speed: <strong>" + vs + "m/s" + "</strong>";
+      }
+    </script>
+    
+    <label for="G1">Universal Gravitation Constant in Newtons Meter^2/Kilogram^2: </label>
+    <input id="G1" type="number"><br>
+    <label for="M7">Mass of orbited body in Kg: </label>
+    <input id="M7" type="number"><br>
+    <label for="r3">Radius between bodies in m: </label>
+    <input id="r3" type="number"><br>
+    <button onclick="algoritmo526()">Calculate</button>
+    <div id="VS"></div>
+    <br>
+    <h4>The universal gravitation constant is: G = 6.67 x 10^-11 newtons meter^2 per kilogram^2</h4>
+    <br>
+
+<h2> Fluids </h2>
+<h4> Pressure </h4>
+
+<script>
+      function algoritmo27() {
+        var f2 = document.getElementById("f2").value;
+        var a1 = document.getElementById("a1").value;
+        var p = (f2/a1);
+        document.getElementById("PS").innerHTML = "Pressure: <strong>" + p + "Pa" + "</strong>";
+      }
+    </script>
+    
+    <label for="f2">Strength in N: </label>
+    <input id="f2" type="number"><br>
+    <label for="a1">Surface area, measured in m^2: </label>
+    <input id="a1" type="number"><br>
+    <button onclick="algoritmo27()">Calculate</button>
+    <div id="PS"></div>
+    <br>
+    <p>1 atm = 1,01 . 10^5 Pa = 760 mmHg = 14,7 lb/pol^2</p>
+    <br>
+
+<h2> Density or specific mass </h2>
+
+<script>
+      function algoritmo28() {
+        var m8 = document.getElementById("m8").value;
+        var vol = document.getElementById("vol").value;
+        var d = (m8/vol);
+        document.getElementById("DENS").innerHTML = "Specific mass: <strong>" + d + "kg/m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="m8">Mass, measured in kg: </label>
+    <input id="m8" type="number"><br>
+    <label for="vol">volume, measured in m^3: </label>
+    <input id="vol" type="number"><br>
+    <button onclick="algoritmo28()">Calculate</button>
+    <div id="DENS"></div>
+    <br>
+
+<h2> Pressure inside a liquid </h2>
+<h4>Normally we use gravity acceleration (g) like 9.8 m/s^2</h4>
+
+<script>
+      function algoritmo29() {
+        var d2 = document.getElementById("d2").value;
+        var g2 = document.getElementById("g2").value;
+        var h1 = document.getElementById("h1").value;
+        var pl = (d2*g2*h1);
+        document.getElementById("PL").innerHTML = "Pressure: <strong>" + pl + "Pa" + "</strong>";
+      }
+    </script>
+    
+    <label for="d2">Density, measured in kg/m^3: </label>
+    <input id="d2" type="number"><br>
+    <label for="g2">Acceleration of gravity in m/s^2: </label>
+    <input id="g2" type="number"><br>
+    <label for="h1">Height, measured in m: </label>
+    <input id="h1" type="number"><br>
+    <button onclick="algoritmo29()">Calculate</button>
+    <div id="PL"></div>
+    <br>
+
+<h2> Communicating vessels and fluids </h2>
+<h4>Density of liquid A</h4>
+
+<script>
+      function algoritmo30() {
+        var db = document.getElementById("db").value;
+        var hb = document.getElementById("hb").value;
+        var ha = document.getElementById("ha").value;
+        var da = (db*hb)/ha;
+        document.getElementById("DA").innerHTML = "Density of liquid A: <strong>" + da + "kg/m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="db">Density of liquid b, measured in kg/m^3: </label>
+    <input id="db" type="number"><br>
+    <label for="hb">Height corresponding to liquid b, measured in m: </label>
+    <input id="hb" type="number"><br>
+    <label for="ha">Height corresponding to liquid a, measured in m: </label>
+    <input id="ha" type="number"><br>
+    <button onclick="algoritmo30()">Calculate</button>
+    <div id="DA"></div>
+    <br>
+    <p> ha/hb = db/da  =>  da*ha = db*hb </p>
+
+<h2> Communicating vessels and fluids </h2>
+<h4>Density of liquid B</h4>
+
+<script>
+      function algoritmo31() {
+        var da1 = document.getElementById("da1").value;
+        var ha1 = document.getElementById("ha1").value;
+        var hb1 = document.getElementById("hb1").value;
+        var db1 = (da1*ha1)/hb1;
+        document.getElementById("DB").innerHTML = "Density of liquid B: <strong>" + db1 + "kg/m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="da1">Density of liquid a, measured in kg/m^3: </label>
+    <input id="da1" type="number"><br>
+    <label for="ha1">Height corresponding to liquid a, measured in m: </label>
+    <input id="ha1" type="number"><br>
+    <label for="hb1">Height corresponding to liquid b, measured in m: </label>
+    <input id="hb1" type="number"><br>
+    <button onclick="algoritmo31()">Calculate</button>
+    <div id="DB"></div>
+    <br>
+    <p> ha/hb = db/da  =>  da*ha = db*hb </p>
+
+<h2> Communicating vessels and fluids </h2>
+<h4>Height corresponding to liquid A</h4>
+
+<script>
+      function algoritmo32() {
+        var db2 = document.getElementById("db2").value;
+        var hb2 = document.getElementById("hb2").value;
+        var da2 = document.getElementById("da2").value;
+        var ha2 = (db2*hb2)/da2;
+        document.getElementById("HA").innerHTML = "Liquid Height A: <strong>" + ha2 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="db2">Density of liquid b, measured in kg/m^3: </label>
+    <input id="db2" type="number"><br>
+    <label for="hb2">Height corresponding to liquid b, measured in m: </label>
+    <input id="hb2" type="number"><br>
+    <label for="da2">Density of liquid a, measured in kg/m^3</label>
+    <input id="da2" type="number"><br>
+    <button onclick="algoritmo32()">Calculate</button>
+    <div id="HA"></div>
+    <br>
+    <p> ha/hb = db/da  =>  da*ha = db*hb </p>
+
+<h2> Communicating vessels and fluids </h2>
+<h4>Height corresponding to liquid B</h4>
+
+<script>
+      function algoritmo33() {
+        var da3 = document.getElementById("da3").value;
+        var ha3 = document.getElementById("ha3").value;
+        var db3 = document.getElementById("db3").value;
+        var hb3 = (da3*ha3)/db3;
+        document.getElementById("HB").innerHTML = "Liquid Height B: <strong>" + hb3 + "m" + "</strong>";
+      }
+    </script>
+    
+    <label for="da3">Density of liquid a, measured in kg/m^3: </label>
+    <input id="da3" type="number"><br>
+    <label for="ha3">Height corresponding to liquid a, measured in m: </label>
+    <input id="ha3" type="number"><br>
+    <label for="db3">Density of liquid b, measured in kg/m^3</label>
+    <input id="db3" type="number"><br>
+    <button onclick="algoritmo33()">Calculate</button>
+    <div id="HB"></div>
+    <br>
+    <p> ha/hb = db/da  =>  da*ha = db*hb </p>
+
+<h2> Pascal's Principle </h2>
+<h4> Force to be applied </h4>
+
+<script>
+      function algoritmo34() {
+        var fb = document.getElementById("fb").value;
+        var sa = document.getElementById("sa").value;
+        var sb = document.getElementById("sb").value;
+        var fa = (fb*sa)/sb;
+        document.getElementById("FA").innerHTML = "Applied Force: <strong>" + fa + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="fb">Arrival force in N: </label>
+    <input id="fb" type="number"><br>
+    <label for="sa">Area related to applied force in m^2: </label>
+    <input id="sa" type="number"><br>
+    <label for="sb">Area related to the arrival force in m^2:</label>
+    <input id="sb" type="number"><br>
+    <button onclick="algoritmo34()">Calculate</button>
+    <div id="FA"></div>
+    <br>
+    <p> F1/S1 = F2/S2 <p>
+
+<h2> Pascal's Principle </h2>
+<h4> Arrival force </h4>
+
+<script>
+      function algoritmo35() {
+        var fa1 = document.getElementById("fa1").value;
+        var sb1 = document.getElementById("sb1").value;
+        var sa1 = document.getElementById("sa1").value;
+        var fb1 = (fa1*sb1)/sa1;
+        document.getElementById("FB").innerHTML = "Arrival force: <strong>" + fb1 + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="fa1">Applied Force in N: </label>
+    <input id="fa1" type="number"><br>
+    <label for="sb1">Area related to the arrival force in m^2: </label>
+    <input id="sb1" type="number"><br>
+    <label for="sa1">Area related to applied force in m^2:</label>
+    <input id="sa1" type="number"><br>
+    <button onclick="algoritmo35()">Calculate</button>
+    <div id="FB"></div>
+    <br>
+    <p> F1/S1 = F2/S2 <p>
+
+<h2> Pascal's Principle </h2>
+<h4> Area related to the force to be applied </h4>
+
+<script>
+      function algoritmo36() {
+        var fa2 = document.getElementById("fa2").value;
+        var sb2 = document.getElementById("sb2").value;
+        var fb2 = document.getElementById("fb2").value;
+        var sa2 = (fa2*sb2)/fb2;
+        document.getElementById("SA").innerHTML = "Area related to applied force: <strong>" + sa2 + "m^2" + "</strong>";
+      }
+    </script>
+    
+    <label for="fa2">Applied Force in N: </label>
+    <input id="fa2" type="number"><br>
+    <label for="sb2">Area related to the arrival force in m^2: </label>
+    <input id="sb2" type="number"><br>
+    <label for="fb2">Arrival force in N:</label>
+    <input id="fb2" type="number"><br>
+    <button onclick="algoritmo36()">Calculate</button>
+    <div id="SA"></div>
+    <br>
+    <p> F1/S1 = F2/S2 <p>
+
+<h2> Pascal's Principle </h2>
+<h4> Area related to output force or Area related to the arrival force </h4>
+
+<script>
+      function algoritmo37() {
+        var fb3 = document.getElementById("fb3").value;
+        var sa3 = document.getElementById("sa3").value;
+        var fa3 = document.getElementById("fa3").value;
+        var sb3 = (fb3*sa3)/fa3;
+        document.getElementById("SB").innerHTML = "Area related to the arrival force: <strong>" + sb3 + "m^2" + "</strong>";
+      }
+    </script>
+    
+    <label for="fb3">Arrival force in N: </label>
+    <input id="fb3" type="number"><br>
+    <label for="sa3">Area related to applied force in m^2: </label>
+    <input id="sa3" type="number"><br>
+    <label for="fa3">Applied Force in N:</label>
+    <input id="fa3" type="number"><br>
+    <button onclick="algoritmo37()">Calculate</button>
+    <div id="SB"></div>
+    <br>
+    <p> F1/S1 = F2/S2 <p>
+
+<h2> Buoyancy </h2>
+<h4> Normally we use gravity acceleration (g) like 9.8m/s^2 </h4>
+
+<script>
+      function algoritmo38() {
+        var df = document.getElementById("df").value;
+        var vdf = document.getElementById("vdf").value;
+        var g3 = document.getElementById("g3").value;
+        var emx = (df*vdf*g3);
+        document.getElementById("EMX").innerHTML = "Buoyancy: <strong>" + emx + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="df">Fluid density, measured in Kg/m^3: </label>
+    <input id="df" type="number"><br>
+    <label for="vdf">Volume of displaced fluid, measured in m^3: </label>
+    <input id="vdf" type="number"><br>
+    <label for="g3">Gravity accelaration in m/s^2:</label>
+    <input id="g3" type="number"><br>
+    <button onclick="algoritmo38()">Calculate</button>
+    <div id="EMX"></div>
+    <br>
+
+<h2> Apparent weight </h2>
+
+<script>
+      function algoritmo39() {
+        var pr = document.getElementById("pr").value;
+        var emx1 = document.getElementById("emx1").value;
+        var pa = (pr-emx1);
+        document.getElementById("PA").innerHTML = "Apparent weight: <strong>" + pa + "N" + "</strong>";
+      }
+    </script>
+    
+    <label for="pr">Actual Weight in N: </label>
+    <input id="pr" type="number"><br>
+    <label for="emx1">Buoyancy in N: </label>
+    <input id="emx1" type="number"><br>
+    <button onclick="algoritmo39()">Calculate</button>
+    <div id="PA"></div>
+    <br>
+    <h4> Apparent Weight = Actual Weight - Buoyancy </h4>
+
+<h2> Body Weight = Volume Weight of Displaced Liquid </h2>
+<h4> Actual Weight = Apparent Weight + Buoyancy => Body Density * Body Volume = Liquid Density * Liquid Volume </h4>
+<h4> Body Density </h4>
+
+<script>
+      function algoritmo40() {
+        var dl = document.getElementById("dl").value;
+        var vl = document.getElementById("vl").value;
+        var vc = document.getElementById("vc").value;
+        var dc = (dl*vl)/vc;
+        document.getElementById("DC").innerHTML = "Body Density: <strong>" + dc + "kg/m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="dl">Density of the liquid in kg/m^3: </label>
+    <input id="dl" type="number"><br>
+    <label for="vl">Liquid volume in m^3: </label>
+    <input id="vl" type="number"><br>
+    <label for="vc">Body volume in m^3: </label>
+    <input id="vc" type="number"><br>
+    <button onclick="algoritmo40()">Calculate</button>
+    <div id="DC"></div>
+    <br>
+
+<h4> Liquid Density </h4>
+
+<script>
+      function algoritmo41() {
+        var dc1 = document.getElementById("dc1").value;
+        var vc1 = document.getElementById("vc1").value;
+        var vl1 = document.getElementById("vl1").value;
+        var dl1 = (dc1*vc1)/vl1;
+        document.getElementById("DL").innerHTML = "Liquid Density: <strong>" + dl1 + "kg/m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="dc1">Density of the body in kg/m^3: </label>
+    <input id="dc1" type="number"><br>
+    <label for="vc1">Body volume in m^3: </label>
+    <input id="vc1" type="number"><br>
+    <label for="vl1">Liquid volume in m^3: </label>
+    <input id="vl1" type="number"><br>
+    <button onclick="algoritmo41()">Calculate</button>
+    <div id="DL"></div>
+    <br>
+
+<h4> Body volume </h4>
+
+<script>
+      function algoritmo42() {
+        var dl2 = document.getElementById("dl2").value;
+        var vl2 = document.getElementById("vl2").value;
+        var dc2 = document.getElementById("dc2").value;
+        var vc2 = (dl2*vl2)/dc2;
+        document.getElementById("VC").innerHTML = "Body volume: <strong>" + vc2 + "m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="dl2">Density of the liquid in kg/m^3: </label>
+    <input id="dl2" type="number"><br>
+    <label for="vl2">Liquid volume in m^3: </label>
+    <input id="vl2" type="number"><br>
+    <label for="dc2">Density of the body in kg/m^3: </label>
+    <input id="dc2" type="number"><br>
+    <button onclick="algoritmo42()">Calculate</button>
+    <div id="VC"></div>
+    <br>
+
+<h4> Liquid volume </h4>
+
+<script>
+      function algoritmo43() {
+        var dc3 = document.getElementById("dc3").value;
+        var vc3 = document.getElementById("vc3").value;
+        var dl3 = document.getElementById("dl3").value;
+        var vl3 = (dc3*vc3)/dl3;
+        document.getElementById("VL").innerHTML = "Liquid volume: <strong>" + vl3 + "m^3" + "</strong>";
+      }
+    </script>
+    
+    <label for="dc3">Density of the body in kg/m^3: </label>
+    <input id="dc3" type="number"><br>
+    <label for="vc3">Body volume in m^3: </label>
+    <input id="vc3" type="number"><br>
+    <label for="dl3">Density of the Liquid in kg/m^3: </label>
+    <input id="dl3" type="number"><br>
+    <button onclick="algoritmo43()">Calculate</button>
+    <div id="VL"></div>
+    <br>
+</div>
+</div>
+
+</body>
+</html>
